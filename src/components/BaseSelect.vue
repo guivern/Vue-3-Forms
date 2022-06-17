@@ -1,6 +1,11 @@
 <template>
-  <label>{{label}}</label>
-  <select v-bind="$attrs" @change="$emit('update:modelValue', $event.target.value)">
+  <label v-if="label">{{label}}</label>
+  <select
+    class="field"
+    v-bind="$attrs"
+    :value="modelValue"
+    @change="$emit('update:modelValue', $event.target.value)"
+    >
     <option
       v-for="option in options"
       :value="option"
