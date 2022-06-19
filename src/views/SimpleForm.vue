@@ -15,13 +15,15 @@
       <base-input v-model="event.location" label="Location" type="text"></base-input>
 
       <h3>Are pets allowed?</h3>
-      <div>
+      <!-- <div>
         <base-radio v-model="event.pets" :value="true" name="pets" label="Yes"></base-radio>
       </div>
 
       <div>
         <base-radio v-model="event.pets" :value="false" name="pets" label="No"></base-radio>
-      </div>
+      </div> -->
+
+      <base-radio-group v-model="event.pets" :options="petOptions" name="pets" vertical></base-radio-group>
 
       <h3>Extras</h3>
       <div>
@@ -64,7 +66,11 @@ export default {
           catering: false,
           music: false
         }
-      }
+      },
+      petOptions: [
+        { label: 'Yes', value: true },
+        { label: 'No', value: false }
+      ]
     }
   }
 }
