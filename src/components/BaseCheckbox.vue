@@ -5,11 +5,13 @@
     :checked="modelValue"
     @change="$emit('update:modelValue', $event.target.checked)"
     class="field"
+    :id="uuid"
   />
-   <label v-if="label">{{label}}</label>
+   <label v-if="label" for="uuid">{{label}}</label>
 </template>
 
 <script>
+import UniqueId from '../features/UniqueID'
 export default {
   props: {
     label: {
@@ -19,6 +21,12 @@ export default {
     modelValue: {
       type: Boolean,
       default: false
+    }
+  },
+  setup () {
+    const uuid = UniqueId().getID()
+    return {
+      uuid
     }
   }
 }

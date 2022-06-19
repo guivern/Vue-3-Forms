@@ -1,6 +1,7 @@
 <template>
-  <label v-if="label">{{label}}</label>
+  <label v-if="label" for="uuid">{{label}}</label>
   <select
+    :id="uuid"
     class="field"
     v-bind="$attrs"
     :value="modelValue"
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import UniqueId from '../features/UniqueID'
 export default {
   props: {
     label: {
@@ -31,6 +33,12 @@ export default {
     options: {
       type: Array,
       required: true
+    }
+  },
+  setup () {
+    const uuid = UniqueId().getID()
+    return {
+      uuid
     }
   }
 }
