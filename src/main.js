@@ -3,11 +3,14 @@ import App from './App.vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
+// auto importing components from components folder with the Base prefix
 const requireComponent = require.context(
   './components',
   false,
   /Base[A-Z]\w+\.(vue|js)$/
 )
+
+// requireComponent.keys(): ['./BaseInput.vue', './BaseSelect.vue']
 
 const app = createApp(App)
 
