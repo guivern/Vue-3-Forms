@@ -2,22 +2,11 @@
   <div>
     <h1>Create an event</h1>
     <form>
-      <!-- <label>Select a category</label>
-      <select v-model="event.category">
-        <option
-          v-for="option in categories"
-          :value="option"
-          :key="option"
-          :selected="option === event.category"
-        >
-          {{ option }}
-        </option>
-      </select> -->
       <base-select v-model="event.category" :options="categories" label="Select a category"></base-select>
 
       <h3>Name & describe your event</h3>
 
-      <base-input v-model="event.title" label="TItle" type="text"></base-input>
+      <base-input v-model="event.title" label="Title" type="text"></base-input>
 
       <base-input v-model="event.description" label="Description" type="text"></base-input>
 
@@ -27,13 +16,11 @@
 
       <h3>Are pets allowed?</h3>
       <div>
-        <input type="radio" v-model="event.pets" :value="1" name="pets" />
-        <label>Yes</label>
+        <base-radio v-model="event.pets" :value="1" name="pets" label="Yes"></base-radio>
       </div>
 
       <div>
-        <input type="radio" v-model="event.pets" :value="0" name="pets" />
-        <label>No</label>
+        <base-radio v-model="event.pets" :value="0" name="pets" label="No"></base-radio>
       </div>
 
       <h3>Extras</h3>

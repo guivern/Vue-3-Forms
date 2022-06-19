@@ -1,5 +1,6 @@
 <template>
    <input
+    v-bind="$attrs"
     type="checkbox"
     :checked="modelValue"
     @change="$emit('update:modelValue', $event.target.checked)"
