@@ -16,11 +16,11 @@
 
       <h3>Are pets allowed?</h3>
       <div>
-        <base-radio v-model="event.pets" :value="1" name="pets" label="Yes"></base-radio>
+        <base-radio v-model="event.pets" :value="true" name="pets" label="Yes"></base-radio>
       </div>
 
       <div>
-        <base-radio v-model="event.pets" :value="0" name="pets" label="No"></base-radio>
+        <base-radio v-model="event.pets" :value="false" name="pets" label="No"></base-radio>
       </div>
 
       <h3>Extras</h3>
@@ -59,7 +59,7 @@ export default {
         title: '',
         description: '',
         location: '',
-        pets: 1,
+        pets: true,
         extras: {
           catering: false,
           music: false

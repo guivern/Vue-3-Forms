@@ -17,11 +17,11 @@ export default {
       default: ''
     },
     modelValue: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       default: ''
     },
     value: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       required: true
     }
   }
